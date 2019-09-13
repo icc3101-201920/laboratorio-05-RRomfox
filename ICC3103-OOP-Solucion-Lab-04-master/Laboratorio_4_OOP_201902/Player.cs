@@ -149,7 +149,7 @@ namespace Laboratorio_4_OOP_201902
             {
                 SpecialCard PCard = hand.Cards[cardId];
                 SpecialCard PCard1 = new CombatCard();
-                hand.AddCard(SpecialCard Pcard);
+                hand.AddCard(SpecialCard PCard);
                 hand.DestroyCard(int cardId);
 
             }
@@ -172,18 +172,31 @@ namespace Laboratorio_4_OOP_201902
 
             if (hand.Cards[cardId].GetType().Name == nameof(CombatCard))
             {
-                CombatCard PCard = hand.Cards[cardId];
-                CombatCard PCard1 = new CombatCard();
-                hand.AddCard(CombatCard PCard1);
+                CombatCard CCard = hand.Cards[cardId];
+                CombatCard CCard1 = new CombatCard();
+                hand.AddCard(CombatCard CCard1);
+                Random rnd = new Random();
+                int var = rnd.Next(1, deck.Count);
+                CombatCard DCard = deck.Cards[var];
+                CombatCard DCard1 = new CombatCard();
+                Deck.AddCard(CombatCard DCard1);
+                Deck.DestroyCard(int var);
                 hand.DestroyCard(int cardId);
+
 
 
             }
             if (hand.Cards[cardId].GetType().Name == nameof(SpecialCard))
             {
-                SpecialCard PCard = hand.Cards[cardId];
-                SpecialCard PCard1 = new CombatCard();
-                hand.AddCard(SpecialCard Pcard);
+                SpecialCard CCard = hand.Cards[cardId];
+                SpecialCard CCard1 = new CombatCard();
+                hand.AddCard(SpecialCard CCard);
+                Random rnd = new Random();
+                int var = rnd.Next(1, deck.Count);
+                SpecialCard DCard = deck.Cards[var];
+                SpecialCard DCard1 = new CombatCard();
+                Deck.AddCard(SpecialCard Dcard);
+                Deck.DestroyCard(int var);
                 hand.DestroyCard(int cardId);
 
             }
@@ -203,6 +216,14 @@ namespace Laboratorio_4_OOP_201902
 
         public void FirstHand()
         {
+            int counter = 0;
+            do
+            {
+                int cnt = rnd.Next(1, deck.Count);
+                DrawCard(int cardId = 0);
+                counter++;
+            } while (counter <= 10);
+            
             /*Debe obtener 10 cartas aleatorias del mazo y asignarlas a la mano.
             Utilice el metodo DrawCard con 10 numeros de id aleatorios.
             */
