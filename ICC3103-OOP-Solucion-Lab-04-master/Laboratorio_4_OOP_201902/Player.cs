@@ -106,6 +106,24 @@ namespace Laboratorio_4_OOP_201902
         //Metodos
         public void DrawCard(int cardId = 0)
         {
+            Deck.Shuffle();
+            if (deck.Cards[cardId].GetType().Name == nameof(CombatCard))
+            {
+                CombatCard DCard = deck.Cards[cardId];
+                CombatCard DCard1 = new CombatCard();
+                Deck.AddCard(CombatCard DCard1);
+                Deck.DestroyCard(int cardId);
+
+
+            }
+            if (deck.Cards[cardId].GetType().Name == nameof(SpecialCard))
+            {
+                SpecialCard DCard = deck.Cards[cardId];
+                SpecialCard DCard1 = new CombatCard();
+                Deck.AddCard(SpecialCard Dcard);
+                Deck.DestroyCard(int cardId);
+
+            }
             /*
             1- Definir si la carta a robada del mazo es CombatCard o SpecialCard
             2- Luego deberá agregar la carta robada al mazo. En este paso debe respetar el tipo por referencia, para esto:
@@ -118,6 +136,23 @@ namespace Laboratorio_4_OOP_201902
         }
         public void PlayCard(int cardId, EnumType buffRow = EnumType.None)
         {
+            if (hand.Cards[cardId].GetType().Name == nameof(CombatCard))
+            {
+                CombatCard PCard = hand.Cards[cardId];
+                CombatCard PCard1 = new CombatCard();
+                hand.AddCard(CombatCard PCard1);
+                hand.DestroyCard(int cardId);
+
+
+            }
+            if (hand.Cards[cardId].GetType().Name == nameof(SpecialCard))
+            {
+                SpecialCard PCard = hand.Cards[cardId];
+                SpecialCard PCard1 = new CombatCard();
+                hand.AddCard(SpecialCard Pcard);
+                hand.DestroyCard(int cardId);
+
+            }
             /*Realice el mismo procedimiento que en DrawCard, solo que ahora es desde Hand a Board.
               En caso de CombatCard siga el mismo procedimiento, recuerde que el método AddCard de Board requiere el id del usuario.
               En caso de SpecialCard:
@@ -134,6 +169,24 @@ namespace Laboratorio_4_OOP_201902
         }
         public void ChangeCard(int cardId)
         {
+
+            if (hand.Cards[cardId].GetType().Name == nameof(CombatCard))
+            {
+                CombatCard PCard = hand.Cards[cardId];
+                CombatCard PCard1 = new CombatCard();
+                hand.AddCard(CombatCard PCard1);
+                hand.DestroyCard(int cardId);
+
+
+            }
+            if (hand.Cards[cardId].GetType().Name == nameof(SpecialCard))
+            {
+                SpecialCard PCard = hand.Cards[cardId];
+                SpecialCard PCard1 = new CombatCard();
+                hand.AddCard(SpecialCard Pcard);
+                hand.DestroyCard(int cardId);
+
+            }
             /* Debe cambiar la carta en la posicion cardId de la mano por una carta aleatoria del mazo.
                 1- Defina si la carta a cambiar de la mano es CombatCard o SpecialCard. Luego (Esto permite cambiar la referencia):
                         1.1- Asigne una variable a la carta a cambiar de la mano, ejemplo, CombatCard card = hand.Cards[cardId]
